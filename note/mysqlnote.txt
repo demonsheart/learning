@@ -1,0 +1,8 @@
+登录
+1. mysql -u root -p  (在gitbash下需要在前面加 winpty)
+$ winpty mysql -h localhost -u root -p
+2.show databases; use ......; show tables;describe + 具体表;
+3.创建用户和设置权限 create user 和 grant 命令
+  2509875617@qq.com xuezhiqian
+4.source 绝对路径(注意用/)    (运行已有的.sql文件)
+5.
