@@ -1,4 +1,6 @@
 <?php
+require_once("file_exceptions.php");
+
 // create short variable names
 $tireqty = $_POST['tireqty'];
 $oilqty = $_POST['oilqty'];
@@ -20,10 +22,12 @@ $date = date('H:i, jS F Y');
     <h2>Order Results</h2>
     <?php
     date_default_timezone_set('PRC');
-    echo "<p>Order processed at " . date('H:i, jS F Y');
+    echo "<p>Order processed at " . date('H:i, jS F Y') . "</p>";
+    echo "<p>Your order is as follows: </p>";
 
     $totalqty = 0;
     $totalamount = 0.00;
+
     define('TIREPRICE', 100);
     define('OILPRICE', 10);
     define('SPARKPRICE', 4);
@@ -58,19 +62,25 @@ $date = date('H:i, jS F Y');
     $outputstring = $date . "\t" . $tireqty . " tires \t" . $oilqty . " oil\t" . $sparkqty . " spark plugs\t\$" . $totalamount . "\t" . $address . "\n";
 
     // open file for appending
-    @$fp = fopen("orders.txt", 'ab');
-
-    if (!$fp) {
+    try {
+        if (!($fp = @fopen("orders.txt", 'ab'))) {
+            throw new fileOpenException();
+        }
+        if (!flock($fp, LOCK_EX)) {
+            throw new fileLockException();
+        }
+        if (!fwrite($fp, $outputstring, strlen($outputstring))) {
+            throw new fileWriteException();
+        }
+        flock($fp, LOCK_UN);
+        fclose($fp);
+        echo "<p>Order written.</p>";
+    } catch (fileOpenException $foe) {
+        echo "<p><strong>Orders file cound not be opened.<br />Please contact our webmaster for help.</strong></p>";
+    } catch (Exception $e) {
         echo "<p><strong> Your order could not be processed at this time. Please try again later.</strong></p>";
-        exit;
     }
 
-    flock($fp, LOCK_EX);
-    fwrite($fp, $outputstring, strlen($outputstring));
-    flock($fp, LOCK_UN);
-    fclose($fp);
-
-    echo "<p>Order written.</p>"
     ?>
 </body>
 
