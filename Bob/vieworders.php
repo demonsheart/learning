@@ -13,7 +13,7 @@ $document_root = $_SERVER['DOCUMENT_ROOT'];
     <h1>Bob's Auto Parts</h1>
     <h2>Customer Orders</h2>
     <?php
-    @$fp = fopen("$document_root/learning/Bob/orders.txt", 'rb');
+    @$fp = fopen("orders.txt", 'rb');
     /*method 1*/
     // flock($fp, LOCK_SH); // lock file for reading
 
@@ -33,7 +33,7 @@ $document_root = $_SERVER['DOCUMENT_ROOT'];
     //fpassthru($fp); //将指向文件内容发送到标准输出 然后关闭文件 注意输出将不会产生换行
 
     /*method 3*/
-    echo nl2br(fread($fp, filesize("$document_root/learning/Bob/orders.txt")));
+    echo nl2br(fread($fp, filesize("orders.txt")));
     fclose($fp);
     ?>
 </body>

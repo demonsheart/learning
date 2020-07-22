@@ -29,7 +29,7 @@ $document_root = $_SERVER['DOCUMENT_ROOT'];
     <?php
     //Read in the entire file
     //Each order becomes an element in the array
-    $orders = file("$document_root/learning/Bob/orders.txt");
+    $orders = file("orders.txt");
 
     //count the number of orders in the array
     $number_of_orders = count($orders);

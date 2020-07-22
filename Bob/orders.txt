@@ -4,3 +4,4 @@
 17:42, 16th July 2020	5 tires 	3 oil	9 spark plugs	$622.6	Australia
 09:00, 17th July 2020	3 tires 	9 oil	5 spark plugs	$451	USA
 11:45, 18th July 2020	5 tires 	7 oil	9 spark plugs	$666.6	Yibin
+17:13, 22nd July 2020	6 tires 	6 oil	6 spark plugs	$752.4	Shenzhen

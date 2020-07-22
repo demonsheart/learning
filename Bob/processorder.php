@@ -58,7 +58,7 @@ $date = date('H:i, jS F Y');
     $outputstring = $date . "\t" . $tireqty . " tires \t" . $oilqty . " oil\t" . $sparkqty . " spark plugs\t\$" . $totalamount . "\t" . $address . "\n";
 
     // open file for appending
-    @$fp = fopen("$document_root/learning/Bob/orders.txt", 'ab');
+    @$fp = fopen("orders.txt", 'ab');
 
     if (!$fp) {
         echo "<p><strong> Your order could not be processed at this time. Please try again later.</strong></p>";
