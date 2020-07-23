@@ -5,4 +5,6 @@ $ winpty mysql -h localhost -u root -p
 3.创建用户和设置权限 create user 和 grant 命令
   2509875617@qq.com xuezhiqian
 4.source 绝对路径    (运行已有的.sql文件)
-5.
+
+php 与 mysql 
+看phpformysql 文件夹代码
