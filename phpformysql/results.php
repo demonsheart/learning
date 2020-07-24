@@ -30,7 +30,7 @@
     }
 
     $db = new mysqli('localhost', '2509875617', 'xuezhiqian', 'books');
-    if (mysqli_connect_errno()) {
+    if ($db->connect_error) {
         echo '<p>Error: Could not connect to database.<br />
              Please try again.<p>';
         exit;
@@ -39,7 +39,7 @@
     //将查询模板与数据分开发送 防止SQL注入
     $query = "SELECT ISBN, Author, Title, Price FROM Books WHERE $searchtype = ?"; //查询模板 ?代表占位符
     $stmt = $db->prepare($query); //构造查询所需对象
-    $stmt->bind_param('s', $searchterm);//占位符替换 s表示字符串 i表示整数 b表示blob类型... 依据?的多少顺序传参
+    $stmt->bind_param('s', $searchterm); //占位符替换 s表示字符串 i表示整数 b表示blob类型... 依据?的多少顺序传参
     $stmt->execute();
     $stmt->store_result();
 

@@ -7,9 +7,14 @@ $ winpty mysql -h localhost -u root -p
 4.source 绝对路径    (运行已有的.sql文件)
 
 php 与 mysql 
-看phpformysql 文件夹代码
+1.预处理 mysqli_stmt
+  相比于直接执行SQL语句，预处理语句有两个主要优点：
+  预处理语句大大减少了分析时间，只做了一次查询（虽然语句多次执行）
+  绑定参数减少了服务器带宽，你只需要发送查询的参数，而不是整个语句
+  预处理语句针对SQL注入是非常有用的，因为 参数值发送后使用不同的协议，保证了数据的合法性。
 
 mysql 高级管理
 1.mysql数据库中的表格保存了用户 权限等信息，用户登录、命令都将通过其检验是否有效
 2.手动修改权限时 需要 flush privileges; 重新载入授权表
- 
+3.适当应用EXPLAIN了解查询的执行过程
+4.表优化 OPTIMIZE TABLE tablename;
