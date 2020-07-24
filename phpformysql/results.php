@@ -29,7 +29,7 @@
             exit;
     }
 
-    $db = new mysqli('localhost', 'root', '7758258', 'books');
+    $db = new mysqli('localhost', '2509875617', 'xuezhiqian', 'books');
     if (mysqli_connect_errno()) {
         echo '<p>Error: Could not connect to database.<br />
              Please try again.<p>';

@@ -31,8 +31,8 @@
     }
 
     //set up for using PDO
-    $user = 'root';
-    $pass = '7758258';
+    $user = '2509875617';
+    $pass = 'xuezhiqian';
     $host = 'localhost';
     $db_name = 'books';
 

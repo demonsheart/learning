@@ -8,3 +8,8 @@ $ winpty mysql -h localhost -u root -p
 
 php 与 mysql 
 看phpformysql 文件夹代码
+
+mysql 高级管理
+1.mysql数据库中的表格保存了用户 权限等信息，用户登录、命令都将通过其检验是否有效
+2.手动修改权限时 需要 flush privileges; 重新载入授权表
+ 
