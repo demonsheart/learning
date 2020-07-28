@@ -7,6 +7,7 @@
 
 <body>
     <?php
+    include('E:/laragon/pass.php');
     //create short variable names
     $searchtype = $_POST['searchtype'];
     $searchterm = trim($_POST['searchterm']);
@@ -29,7 +30,7 @@
             exit;
     }
 
-    $db = new mysqli('localhost', '2509875617', 'xuezhiqian', 'books');
+    $db = new mysqli($db_server, $db_user, $db_password, $db_name);
     if ($db->connect_error) {
         echo '<p>Error: Could not connect to database.<br />
              Please try again.<p>';

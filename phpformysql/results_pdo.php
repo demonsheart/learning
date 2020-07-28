@@ -8,6 +8,7 @@
 <body>
     <h1>Book-O-Rama Search Results</h1>
     <?php
+    include('E:/laragon/pass.php');
     //create variable names
     $searchtype = $_POST['searchtype'];
     $searchterm = trim($_POST['searchterm']);
@@ -29,19 +30,13 @@
              Please go back and try again.<p>';
             exit;
     }
-
-    //set up for using PDO
-    $user = '2509875617';
-    $pass = 'xuezhiqian';
-    $host = 'localhost';
-    $db_name = 'books';
-
+    
     //set up DSN
-    $dsn = "mysql:host=$host;dbname=$db_name";
+    $dsn = "mysql:host=$db_server;dbname=$db_name";
 
     //connect to database
     try {
-        $db = new PDO($dsn, $user, $pass);
+        $db = new PDO($dsn, $db_user, $db_password);
 
         //perform query
         $query = "SELECT ISBN, Author, Title, Price FROM Books WHERE $searchtype = :searchterm";

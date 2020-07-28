@@ -8,6 +8,7 @@
 <body>
     <h1>Book-O-Rama - Book Entry Results</h1>
     <?php
+    include('E:/laragon/pass.php');
     //isset($val) 无效的问题
     if (
         !$_POST['ISBN'] || !$_POST['Author']
@@ -25,7 +26,7 @@
     $price = $_POST['Price'];
     $price = doubleval($price);
 
-    $db = new mysqli('localhost', '2509875617', 'xuezhiqian', 'books');
+    $db = new mysqli($db_server, $db_user, $db_password, $db_name);
     if (mysqli_connect_errno()) {
         echo '<p>Error: Could not connect to database.<br />
              Please try again.<p>';
