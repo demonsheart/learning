@@ -18,3 +18,9 @@ mysql 高级管理
 2.手动修改权限时 需要 flush privileges; 重新载入授权表
 3.适当应用EXPLAIN了解查询的执行过程
 4.表优化 OPTIMIZE TABLE tablename;
+5.主从服务器
+6.LOAD DATA INFILE语句
+
+mysql 高级编程
+1.使用InnoDB事务  理解autocommit的作用
+2.存储过程 存储函数
