@@ -10,12 +10,12 @@
     <?php
     include('E:/laragon/pass.php');
 
-    //注意判断 对比 !trim($_POST['ISBN']);
+    //注意判断
     if (
-        !(isset($_POST['ISBN']) && strlen(trim($_POST['ISBN'])) > 0) ||
-        !(isset($_POST['Author']) && strlen(trim($_POST['Author'])) > 0) ||
-        !(isset($_POST['Title']) && strlen(trim($_POST['Title'])) > 0) ||
-        !(isset($_POST['Price']) && strlen(trim($_POST['Price'])) > 0)
+        !trim($_POST['ISBN'])  ||
+        !trim($_POST['Author'])  ||
+        !trim($_POST['Title']) ||
+        !trim($_POST['Price'])
     ) {
         echo "<p>You have not enter all the required details.<br />
                   Please go back and try again.</p>";
@@ -28,6 +28,7 @@
     $title = trim($_POST['Title']);
     $price = trim($_POST['Price']);
     $price = doubleval($price);
+
 
     $db = new mysqli($db_server, $db_user, $db_password, $db_name);
     if (mysqli_connect_errno()) {

@@ -33,7 +33,7 @@
 
 php函数
 21.php函数不区分大小写
-22.匿名函数function ($value) use($arg) {}
+22.匿名函数function ($value) use($arg) {} 配合 array_walk()函数可实现强大的数组操作
 
 类
 22.Trait    insteadof
