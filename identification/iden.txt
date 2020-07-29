@@ -1,0 +1,5 @@
+1.保存密码
+  最好使用数据库 避免纯文本保存密码 用php内置加密
+2.加密密码
+  string password_hash (string $password, integer $algo [, array $options])
+3.

@@ -7,7 +7,7 @@
 
 <body>
     <?php
-    include('E:/laragon/pass.php');
+    include('E:/laragon/pass/pass.php');
     //create short variable names
     $searchtype = $_POST['searchtype'];
     $searchterm = trim($_POST['searchterm']);

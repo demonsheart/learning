@@ -1,34 +1,30 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Secret Page</title>
-</head>
-
-<body>
-    <?php
-    if (!isset($_POST['name']) || !isset($_POST['password'])) {
-    ?>
-        <h1>Please Log In</h1>
-        <p>This page is secret.</p>
-        <form method="post" action="secret.php">
-            <p>
-                <label for="name">Username:</label>
-                <input type="text" name="name" id="name" size="15" />
-            </p>
-            <p>
-                <label for="password">Password:</label>
-                <input type="text" name="password" id="password" size="15" />
-            </p>
-            <button type="submit" name="submit">Log in</button>
-        </form>
-    <?php
-    } elseif (($_POST['name'] == 'user') && ($_POST['password'] == 'pass')) {
+<?php
+include('E:/laragon/pass/pass1.php');
+if (!$_POST['name'] || !$_POST['password']) {
+    echo "You have not gave some details";
+    exit;
+}
+$name = $_POST['name'];
+$pass = $_POST['password'];
+//从数据库中获取对应的散列值
+$db = new mysqli($db_server, $db_user, $db_password, $db_name);
+if ($db->connect_error) {
+    echo '<p>Error: Could not connect to database.<br />
+             Please try again.<p>';
+    exit;
+}
+$query = "SELECT password FROM message WHERE user = ?"; //查询模板 ?代表占位符
+$stmt = $db->prepare($query); //构造查询所需对象
+$stmt->bind_param('s', $name); //占位符替换 s表示字符串 i表示整数 b表示blob类型... 依据?的多少顺序传参
+$stmt->execute();
+$stmt->store_result();
+$stmt->bind_result($hash);
+while ($stmt->fetch()) {
+    if (password_verify($pass, $hash)) {//散列值验证
         echo '<h1>Here it is!</h1><p>I bet you are glad you can see this secret page.</p>';
     } else {
         echo '<h1>Sorry!</h1><p>You are not allowed to view these sources!</p>';
     }
-    ?>
-</body>
-
-</html>
+}
+$stmt->free_result();
+$db->close();

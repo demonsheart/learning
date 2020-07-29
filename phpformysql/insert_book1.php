@@ -8,9 +8,9 @@
 <body>
     <h1>Book-O-Rama - Book Entry Results</h1>
     <?php
-    include('E:/laragon/pass.php');
+    include('E:/laragon/pass/pass.php');
 
-    //注意判断
+    //注愝判断
     if (
         !trim($_POST['ISBN'])  ||
         !trim($_POST['Author'])  ||
