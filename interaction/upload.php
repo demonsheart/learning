@@ -44,7 +44,7 @@
     }
 
     //put the file where you like
-    $upload_file = 'E:/laragon/www/learning/Upload/' . $_FILES['the_file']['name'];
+    $upload_file = 'E:/laragon/www/learning/upload_file/' . $_FILES['the_file']['name'];
     if (is_uploaded_file($_FILES['the_file']['tmp_name'])) {
         if (!move_uploaded_file($_FILES['the_file']['tmp_name'], $upload_file)) {
             echo 'Problem: Cound not move file to destination directory.';
@@ -60,7 +60,7 @@
 
     // show what was uploaded
     echo '<p>You uploaded the following image:<br/>';
-    echo '<img src="' . $_FILES['the_file']['name'] . '"/>';
+    echo '<img src="../upload_file/' . $_FILES['the_file']['name'] . '"/>';
     ?>
 </body>
 

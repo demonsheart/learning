@@ -1,0 +1,18 @@
+1.上传多个文件：
+<input type="file" name="the_file[]" id="the_file"/>
+
+$_FILES['the_file']['name'][0] $_FILES['the_file']['name'][1]...
+
+2.上层目录
+../表示源文件所在目录的上一级目录，../../表示源文件所在目录的上上级目录，以此类推。
+
+3.目录函数
+  例子：browsedir2.php browsedir.php scandir.php
+  dirname($path) basename($path)将分别返回 目录 和 文件名
+  mkdir() 和 rmdir() 创建和删除目录
+4.文件函数(baidu.com)
+  获取文件信息函数
+  修改文件属性函数
+  创建、移动、删除文件函数
+5.程序执行函数
+  ex: progex.php
