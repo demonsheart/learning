@@ -1,0 +1,4 @@
+1. parse_url($url) 将解析URL，返回一个包含URL各部分的关联数组(具体内容百度)
+2. getmxrr()  checkdnsrr() 检查host是否有效
+
+备份或镜像文件
