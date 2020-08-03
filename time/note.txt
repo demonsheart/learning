@@ -1,0 +1,21 @@
+1.date() 函数的使用，格式化字符串参数查阅文档
+
+2. int mktime([int hour[, int minute[, int second[, int month[, int day[, int year]]]]]])
+   将时间转化为UNIX时间戳
+
+3.array getdate([int timestamp]); 返回一个包含时间信息的数组 查阅资料
+
+4.int checkdate(int month, int day, int year); 检查时间有效性，返回true/false
+
+5.string strftime(string $format[, int $timestamp]); 格式化时间戳，参数查阅文档
+
+PHP和MySQL的日期格式互换：
+1.默认情况下MySQL以ISO 8601格式化处理时间 (即2015-02-17 / 15-02-17)
+2.从PHP存进MySQL时注意用date()函数处理
+3.可以使用MySQL带的函数DATE_FORMAT() 和 UNIX_TIMESTAMP()格式化输出时间
+
+使用微秒
+microtime()函数
+
+日历函数
+查阅资料
