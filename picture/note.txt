@@ -1,0 +1,7 @@
+1.通常对于HTML和php，发送的第一个数据是：
+ Content-type: text/html
+如果要输出图像而不是文本，则需调用header()指定类型：
+ header('Content-Type: image/png');
+2.html 的 scr="" 除了直接指定png、jpeg、gif文件外，还可以指定生成图像的php脚本
+
+3.图像设计用代码实现过于复杂 暂不考虑
