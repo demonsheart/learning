@@ -22,9 +22,9 @@ $height_image_wo_margins = $height_image - (2 * 18);
 //Tell GD2 where the font you want to use resides
 
 //Windows
-putenv('GDFONTPATH=C:\WINDOWS\Fonts');
+// putenv('GDFONTPATH=C:\WINDOWS\Fonts');
 
-$font_name = 'DejaVuSans';
+$font_name = 'C:\Windows\Fonts\arial.ttf';
 
 $font_size = 33;
 
