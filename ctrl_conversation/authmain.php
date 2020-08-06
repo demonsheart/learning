@@ -11,9 +11,8 @@ if (isset($_POST['userid']) && isset($_POST['password'])) {
         echo 'Connection to database failed:' . mysqli_connect_error();
         exit;
     }
-
-    $query = "select * from authorized_users where name='" . $userid . "' and password=shal('" . $password . "')";
-
+    // This place needs to be encrypted
+    $query = "select * from authorized_users where name='" . $userid . "' and password='" . $password . "'";
     $result =  $db_conn->query($query);
     if ($result->num_rows) {
         //if they are in the database, register the user id
