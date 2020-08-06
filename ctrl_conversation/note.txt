@@ -1,0 +1,25 @@
+关于cookie
+1:
+Set-Cookie: name=value; [expires=date;] [path=path;] [domain=domain_name;] [secure;]  [HttpOnly]
+               名称          有效期                 URL                        https     cookie只能通过http访问
+    有效期指定已过期时间可以删除一个cookie
+2:setcookie()函数
+  $_COOKIE['name']读取保存在cookie中的数据
+
+3.也可通过header()设置cookie,注意cookie header必须优先于任何其他header发送
+
+4.session_get_cookie_params() 查看会话控制设置的cookie内容
+
+5.会话ID保存在PHP常量SID中
+
+实现简单会话
+1.启动会话 session_start()
+
+2.注册会话变量   会话变量保存在超级全局$_SESSION数组中 要创建会话 只需设置该数组即可
+
+3.使用会话变量   检查并调用$_SESSION数组
+
+4.销毁变量和会话 
+  unset($_SESSION['name']); 销毁特定元素 //不要试图销毁整个$_SESSION数组，将禁用会话
+  $_SESSION = array(); 清除已有元素 
+  session_destroy(); 清除会话ID
