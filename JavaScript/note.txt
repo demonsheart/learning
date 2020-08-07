@@ -25,4 +25,6 @@ var firstInput = $('#myForm input:first'); //返回myForm表的第一个input内
 on()方法监听事件
 例子网上阅读(https://www.runoob.com/jquery/jquery-hide-show.html)
 
-
+--jquery AJAX方法
+1. $.ajax() 查阅资料
+2. helper方法
