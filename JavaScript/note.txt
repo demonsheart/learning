@@ -1,0 +1,28 @@
+--百度CDN：
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"> </script>
+
+--选择器：
+基于id查询
+1.  var last_name = $('#last_name');  //#操作符后跟精确id值
+2.  var nameElements = $('#first_name #last_name'); //可以选中多个元素，将返回数组
+
+基于class查询
+var nameElements = $('.name'); //查询同属于class = "name"的元素
+
+其他查询
+var nameElements = $('input[type='text']'); 
+var documentBody = $('body'); //返回body内容
+var firstInput = $('input:first'); //返回第一个input的内容
+var firstInput = $('#myForm input:first'); //返回myForm表的第一个input内容
+
+
+--对选择器的操作
+格式：选择器.方法() //myInput.val()....
+1. val()方法
+2. addClass()方法
+
+--jquery事件
+on()方法监听事件
+例子网上阅读(https://www.runoob.com/jquery/jquery-hide-show.html)
+
+
