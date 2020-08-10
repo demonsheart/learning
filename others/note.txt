@@ -1,0 +1,19 @@
+1. eval(); 以PHP代码形式计算字符串
+
+2. die() 和 exit()
+
+3. serialize($my_object); 序列化变量和对象 将变量或对象转化为字符串
+   unserialize($serial_object);
+
+
+4. get_loaded_extensions() 返回当前PHP可用函数集数组
+   get_extensions_funcs($extension) 返回特定函数集中的函数
+
+5. get_current_user() 返回脚本属主 (本电脑返回a2509875617)
+
+6. echo date('g:i a, j M Y', getlastmod()) getlastmod()返回最后修改的时间戳
+
+7.ini_set(); 临时修改运行时环境
+  ini_get(); 获取
+
+8.命令行上运行php(查阅资料)
