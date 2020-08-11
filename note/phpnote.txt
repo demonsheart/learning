@@ -63,7 +63,7 @@ function myGenerator()
 foreach (myGenerator() as $yieldedValue) {
     echo $yieldedValue . PHP_EOL;
 }
-将输出$value1 value2 value3
+将输出value1 value2 value3
 对于生成器的使用 多查查相关资料
 33.__toString()
 34.反射API 参考reflection.php
